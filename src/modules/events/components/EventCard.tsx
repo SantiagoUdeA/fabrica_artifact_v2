@@ -4,8 +4,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Event } from "@/lib/definitions/event";
+} from "@/modules/ui/card";
+import { Event } from "@/modules/events/lib/event.definitions";
 import { Calendar, Pin } from "lucide-react";
 
 export default function EventCard({ event }: { event: Event }) {
