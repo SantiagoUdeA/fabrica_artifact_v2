@@ -1,5 +1,4 @@
-// export const apiRoute = 'https://vivemedellin-latest.onrender.com'
-export const apiRoute = 'http://localhost:8081'
+import { appConfig } from '@/config/app.config'
 
 export const eventsRoute = '/events'
 
