@@ -15,7 +15,6 @@ import { Label } from '@/modules/ui/label'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { eventsRoute } from '@/modules/shared/routes/routes'
 import { getRedirectPath } from '@/modules/shared/lib/utils/last-route'
 
 export function SignUpForm({
@@ -72,7 +71,8 @@ export function SignUpForm({
                     emailRedirectTo: getRedirectPath(),
                     data: {
                         firstName,
-                        lastName
+                        lastName,
+                        role: 'user'
                     }
                 }
             })
