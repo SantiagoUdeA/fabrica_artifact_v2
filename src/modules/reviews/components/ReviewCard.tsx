@@ -1,3 +1,4 @@
+import CreateReportButton from '@/modules/reports/components/CreateReportButton'
 import { Review } from '@/modules/reviews/lib/review.definitions'
 import Rating from '@/modules/shared/components/Rating'
 import TimeAgo from '@/modules/shared/components/TimeAgo'
@@ -15,10 +16,11 @@ export default function ReviewCard({
         <Card className={className}>
             <CardHeader>
                 <CardTitle className="flex gap-2 items-center">
-                    <div className="rounded-full border border-solid border-black p-1">
+                    <i className="rounded-full border border-solid border-black p-1">
                         <User />
-                    </div>
+                    </i>
                     <p>{review.user.displayName}</p>
+                    <CreateReportButton reviewId={review.id} />
                 </CardTitle>
             </CardHeader>
             <CardContent>
