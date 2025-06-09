@@ -33,7 +33,7 @@ export default function Navbar() {
             <div className="flex gap-1">
                 <ul className="flex gap-2 mr-4">
                     {links.map((link) => (
-                        <Link href={link.route}>
+                        <Link href={link.route} key={link.route}>
                             <Button
                                 variant="ghost"
                                 className={clsx(
