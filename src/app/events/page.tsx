@@ -1,17 +1,25 @@
-import { fetchEvents } from '@/modules/events/lib/event.actions'
-import EventCard from '@/modules/events/components/EventCard'
+import SectionTitle from '@/modules/shared/components/SectionTitle'
+import { Suspense } from 'react'
+import EventCardSkeleton from '@/modules/events/components/EventCardSkeleton'
+import AsyncEventsList from '@/modules/events/components/AsyncEventList'
 
 export default async function EventsPage() {
-    const events = await fetchEvents()
-
     return (
         <>
-            <section className="p-4">
-                <h1 className="text-4xl mb-4">Events</h1>
-                <div className="grid grid-cols-2 gap-2">
-                    {events.map((event) => (
-                        <EventCard event={event} key={event.id} />
-                    ))}
+            <section className='mt-4'>
+                <SectionTitle>Events</SectionTitle>
+                <div className="grid sm:grid-cols-2 gap-6">
+                    <Suspense
+                        fallback={
+                            <>
+                                {Array.from({ length: 6 }).map((_, index) => (
+                                    <EventCardSkeleton key={index} />
+                                ))}
+                            </>
+                        }
+                    >
+                        <AsyncEventsList />
+                    </Suspense>
                 </div>
             </section>
         </>

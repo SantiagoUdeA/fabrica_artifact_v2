@@ -10,7 +10,7 @@ import {
     DropdownMenuLabel,
     DropdownMenuTrigger
 } from '@/modules/ui/dropdown-menu'
-import { User as UserIcon } from 'lucide-react'
+import { LogIn, User as UserIcon } from 'lucide-react'
 import { User } from '@supabase/supabase-js'
 import { useEffect, useState } from 'react'
 import { Skeleton } from '@/modules/ui/skeleton'
@@ -32,20 +32,28 @@ export default function AccountMenu() {
         })
     }, [])
 
+    if (!user) {
+        return (
+            <Button
+                className="rounded-full"
+                variant="outline"
+                onClick={() => router.push('/auth/login')}
+            >
+                <LogIn />
+            </Button>
+        )
+    }
+
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button className="rounded-full" variant='outline'>
+                <Button className="rounded-full" variant="outline">
                     <UserIcon />
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuLabel>
-                    {user ? (
-                        user.email
-                    ) : (
-                        <Skeleton className="h-4 w-full" />
-                    )}
+                    {user ? user.email : <Skeleton className="h-4 w-full" />}
                 </DropdownMenuLabel>
                 <DropdownMenuItem onClick={() => logout()}>
                     Logout

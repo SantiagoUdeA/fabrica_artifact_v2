@@ -1,0 +1,31 @@
+import { Review } from '@/modules/reviews/lib/review.definitions'
+import Rating from '@/modules/shared/components/Rating'
+import TimeAgo from '@/modules/shared/components/TimeAgo'
+import { Card, CardContent, CardHeader, CardTitle } from '@/modules/ui/card'
+import { User } from 'lucide-react'
+
+export default function ReviewCard({
+    review,
+    className
+}: {
+    review: Review
+    className?: string
+}) {
+    return (
+        <Card className={className}>
+            <CardHeader>
+                <CardTitle className="flex gap-2 items-center">
+                    <div className="rounded-full border border-solid border-black p-1">
+                        <User />
+                    </div>
+                    <p>{review.user.displayName}</p>
+                </CardTitle>
+            </CardHeader>
+            <CardContent>
+                <Rating rating={review.rating} />
+                <TimeAgo date={review.createdAt} />
+                <p className="mt-4">{review.comment}</p>
+            </CardContent>
+        </Card>
+    )
+}

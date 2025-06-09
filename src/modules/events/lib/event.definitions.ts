@@ -2,8 +2,8 @@ export interface Event {
     id: string
     title: string
     description: string
-    date: string
+    date: Date
     location: string
     totalReviews: number
-    averageReview: number
+    averageRating: number
 }

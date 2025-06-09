@@ -10,7 +10,7 @@ export async function getGraphQLClient() {
         const { data } = await supabase.auth.getSession()
         const token = data.session?.access_token
 
-        graphQLClientInstance = new GraphQLClient(apiRoute, {
+        graphQLClientInstance = new GraphQLClient(`${apiRoute}/graphql`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
