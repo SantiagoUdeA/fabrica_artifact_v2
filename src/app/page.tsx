@@ -7,7 +7,7 @@ import Link from 'next/link'
 export default function Home() {
     return (
         <section className="w-full h-screen max-w-screen overflow-hidden">
-            <div className="m-auto w-fit my-auto flex gap-4 flex-wrap md:flex-nowrap pt-16 md:pt-0">
+            <div className="m-auto w-fit my-auto flex gap-4 flex-wrap md:flex-nowrap pt-16 lg:pt-0">
                 <div className='flex flex-col justify-center'>
                     <hgroup className="mb-6">
                         <h2 className={clsx("text-5xl font-bold mb-2 text-accent font-bol text-balance", fontPrimary.className)}>
