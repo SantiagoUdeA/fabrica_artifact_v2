@@ -20,7 +20,7 @@ export default function RootLayout({
                 <header>
                     <Navbar />
                 </header>
-                <main className='px-8'>{children}</main>
+                <main className='max-w-[1500px] mx-auto mt-4 px-4 md:px-8'>{children}</main>
                 <Toaster />
             </body>
         </html>

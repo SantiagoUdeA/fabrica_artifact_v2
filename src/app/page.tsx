@@ -10,7 +10,7 @@ export default function Home() {
             <div className="m-auto w-fit my-auto flex gap-4 flex-wrap md:flex-nowrap pt-16 lg:pt-0">
                 <div className='flex flex-col justify-center'>
                     <hgroup className="mb-6">
-                        <h2 className={clsx("text-5xl font-bold mb-2 text-accent font-bol text-balance", fontPrimary.className)}>
+                        <h2 className={clsx("text-5xl xl:text-7xl font-bold mb-2 text-accent font-bol text-balance", fontPrimary.className)}>
                             Real Reviews, Smarter Decisions
                         </h2>
                         <p className="text-lg text-muted-foreground max-w-xl">

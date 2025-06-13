@@ -5,7 +5,7 @@ import { gql } from 'graphql-request'
 export async function allEvents(): Promise<Event[]> {
     const client = await getGraphQLClient()
     const allEventsQuery = gql`
-        query AllEvents {
+        query {
             allEvents {
                 id
                 title
@@ -44,11 +44,13 @@ export async function getEvent(eventId: string): Promise<Event> {
             }
         }
     `
+
     const variables = { eventId: parseInt(eventId) }
     const data = await client.request<{ event: Event }>(
         singleEventQuery,
         variables
     )
+
     const { date, ...eventData } = data.event
     return {
         ...eventData,

@@ -8,7 +8,7 @@ export default async function Reviews({ eventId }: { eventId: Event['id'] }) {
     return (
         <div>
             {reviews.map((review) => (
-                <ReviewCard review={review} key={review.id} className='mt-4'/>
+                <ReviewCard review={review} key={review.id} className='mt-4' showReport/>
             ))}
         </div>
     )

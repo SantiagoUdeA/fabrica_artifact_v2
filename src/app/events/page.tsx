@@ -6,7 +6,7 @@ import AsyncEventsList from '@/modules/events/components/AsyncEventList'
 export default async function EventsPage() {
     return (
         <>
-            <section className='mt-4'>
+            <section>
                 <SectionTitle>Events</SectionTitle>
                 <div className="grid sm:grid-cols-2 gap-6">
                     <Suspense

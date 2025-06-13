@@ -7,10 +7,12 @@ import { User } from 'lucide-react'
 
 export default function ReviewCard({
     review,
-    className
+    className,
+    showReport
 }: {
     review: Review
     className?: string
+    showReport?: boolean
 }) {
     return (
         <Card className={className}>
@@ -20,7 +22,7 @@ export default function ReviewCard({
                         <User />
                     </i>
                     <p>{review.user.displayName}</p>
-                    <CreateReportButton reviewId={review.id} />
+                    {showReport && <CreateReportButton reviewId={review.id} />}
                 </CardTitle>
             </CardHeader>
             <CardContent>
